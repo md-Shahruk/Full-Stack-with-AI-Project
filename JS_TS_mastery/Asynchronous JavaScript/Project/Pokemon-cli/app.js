@@ -14,14 +14,20 @@ const rl = readline.createInterface({
 });
 
 const question = (prompt)=> new Promise((resolve)=>{
-   rl.question(prompt, resolve);
+
+    rl.question(prompt, resolve);
 });
 
 async function main(){
-    const name = await question("Enter pokemono name:");
-    try{
+    
+    while(true){
+        const name = await question("Enter pokemono name or quit:");
+        if(name === "quit"){
+            rl.close();
+            break;
+        }else{
+         try{
         
-
         const data = await getPokemon(name);
         displayPokemon(data);
         
@@ -39,6 +45,10 @@ async function main(){
 
       }
     }
+        }
+    }
+   
+    
 }
 
 function displayPokemon(data){
