@@ -1,6 +1,6 @@
 async function githubUserFinder(){
     try {
-        const res = await fetch('https://api.github.com/users/octocat');
+        const res = await fetch('https://api.github.com/users/md-Shahruk');
         
         if (!res.ok){
             
