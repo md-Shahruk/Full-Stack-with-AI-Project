@@ -53,7 +53,7 @@
       border-bottom: 1px solid rgba(100, 180, 255, 0.15);
       padding-bottom: 0.8rem;
       flex-wrap: wrap;
-      justify-content: center; 
+      justify-content: center;
     }
 
     .nasa-title h1 {
@@ -61,6 +61,27 @@
       font-size: 1.7rem;
       letter-spacing: 0.5px;
       text-align: center; /* This is all you need for text centering */
+    }
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 8px solid rgba(20, 1, 1, 0.2);
+      border-top-color: #f2f6fb;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+
+      position: absolute;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .image-wrapper.loading img {
+      visibility: hidden;
     }
 
     .image-wrapper {
@@ -150,23 +171,32 @@
       color: white;
       transform: scale(1.01);
     }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
   </style>
   <body>
     <div class="nasa-card">
       <div class="nasa-title">
-        <h1  class="title">NASA Astronomy Picture</h1>
+        <h1 class="title">NASA Astronomy Picture</h1>
       </div>
 
       <div class="image-wrapper">
-        <img id="nasaImage"
+        <div class="loader" id="loader"></div>
+        <img
+          id="nasaImage"
           src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=500&fit=crop&crop=center&q=80"
           alt="Space image from NASA"
         />
-        
       </div>
 
       <div class="info-block">
-        <h2 id="imageName" class="image-name">Pillars of Creation · Eagle Nebula</h2>
+        <h2 id="imageName" class="image-name">
+          Pillars of Creation · Eagle Nebula
+        </h2>
         <div id="imageDate" class="date">April 12, 2026</div>
       </div>
 

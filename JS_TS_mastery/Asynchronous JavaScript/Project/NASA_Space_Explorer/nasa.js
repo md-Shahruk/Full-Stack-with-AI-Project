@@ -2,10 +2,16 @@
 const API_URL = "https://api.nasa.gov/planetary/apod";
 const API_KEY = 'gwqGMYUBPPOBDLTbg5QYWSvbA6a2hLyoJOVfYrR1';
 
-export async function getNaSa(){
+export async function getNaSa(date = null){
     try{
 
-        const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`);
+        let url = `${API_URL}?api_key=${API_KEY}`;
+
+        if(date){
+            url += `&date=${date}`;
+        }
+
+        const res = await fetch(url);
 
         if(!res.ok){
             throw new Error('Someting_wrong');
@@ -14,6 +20,7 @@ export async function getNaSa(){
 
     }catch(error){
          console.log("Error", error.message);
+         throw error;
          
     }
 }
