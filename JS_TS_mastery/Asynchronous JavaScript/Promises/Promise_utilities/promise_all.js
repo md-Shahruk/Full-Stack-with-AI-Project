@@ -14,14 +14,17 @@ const promise3 = new Promise((resolve)=>{
     setTimeout(()=> resolve("Products loaded.."), 1500);
 })
 
+// check: 01
 // const promise4 = new Promise((resolve)=>{
 //     setTimeout(()=> resolve("Complete.."), 500);
 // })
 
-// now change for check fail 
+// check: 02
 const promise4 = new Promise((resolve, reject)=>{
     setTimeout(()=> reject("failed.."), 3500);
 })
+
+// check02 output:
 /*
   ouput: failed...
   dosen't wait for success 2sec
@@ -39,7 +42,7 @@ Promise.all([promise1, promise2, promise3, promise4])
     
 })
 /*
-  This time output:
+  check01 output:
 
 All done
 [

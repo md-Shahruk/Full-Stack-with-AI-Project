@@ -71,8 +71,9 @@ It will be built step by step as I learn:
 - AI-assisted Software Development
 
 ---
-## Weekly Progress
 
+## Weekly Progress
+---
 ### Week 2
 - Learn JS arrays and explore with example: every, filter, find, forEach, map, reduce,some, sort
   - And finally make a proejct using js arrays: Student Grade Analyzer
@@ -96,9 +97,38 @@ It will be built step by step as I learn:
     - Delete contacts by id
     - Persistent storage using JSON file
     - Using node js basic  fs, readFileSync, writeFileSync, parse, stringify, process.argv[] in whole project
+---
+---
 
 ### Week 3
+- Learn async and await in js
+  - And code practice using promises
+- Learn callbacks in js and why it's hard to debug
+  -  Efficient way to write using then, cathc or async, await
+- Learn Interesting topic Event loop in js. How macrotask and microtask play role and continue asynchronous behaviour in js
+  -  Practice 4 interesting code predict exmaple 
+- Fetch and error: learn how to fetch data uising api and handle different type of error
+- Learn Promise utilities
+  - When all operations need to succeed: Promise.all()
+  - When every result matters, even if some fail: Promise.allsettled
+  - When the first settled Promise matters: Promise.race()
 
+- Concept clear which one is better sequential vs parallel and why parallel faster then sequential for that do mini project practice
+- 3 Main Project for this section: based on  fetch and error handle concept
+  - NASA_SPACE_EXPLORER
+    - fetch nasa image, title , data and explanation using nasa api
+    - Implement html css for better UI visualization
+    - feature handle how previousbutton and nextbutton work 
+    - spin loading 
+    - Dom manipulatipn
+  
+  - Pokemon_CLI
+    - cli based proejct where intorduce readline concept and how promise resolve take input from user
+    - fetch data using pokemon api
+    - show specific pokemon require data as well
 
-
-
+  - Weather_APP
+    - fetch data using weather api
+    - cli based project
+    - show data city name, temp, feels_like, humidity, description, wind
+    - error handling with status code 
