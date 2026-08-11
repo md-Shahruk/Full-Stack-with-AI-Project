@@ -73,14 +73,29 @@ It will be built step by step as I learn:
 ---
 ## Weekly Progress
 
-### Week 1
-
-- 
-- 
-
 ### Week 2
-
-- 
+- Learn JS arrays and explore with example: every, filter, find, forEach, map, reduce,some, sort
+  - And finally make a proejct using js arrays: Student Grade Analyzer
+- Explore what is higher order function in js.
+  - And build form scratch:
+    - myFilter.js
+    - myforEach.js
+    - myMap.js 
+- Learn node js basic fs, readFileSync, writeFileSync, parse, stringify and make a cli based note apps mini project
+- Clear objects concept in js
+  - destructuring
+  - objects methods: Objects.keys(), Object.values(),Objects.entries()
+- And build two mini proojects:
+   - Library management
+   - Product Inventory
+- Finally one main project: CLI based Contact Book
+   - Features:
+    - Add new contacts with name, email, phone
+    - list all saved contact
+    - Search contacts by name, phone or email
+    - Delete contacts by id
+    - Persistent storage using JSON file
+    - Using node js basic  fs, readFileSync, writeFileSync, parse, stringify, process.argv[] in whole project
 
 ### Week 3
 
