@@ -22,11 +22,11 @@ function myCounter (times){
     }
 }
 
-const myGenerator = myCounter(3);
+const myIterator = myCounter(3);
 
-console.log(myGenerator.next());
-console.log(myGenerator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
 
-console.log(myGenerator.next());
-console.log(myGenerator.next());
-console.log(myGenerator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
