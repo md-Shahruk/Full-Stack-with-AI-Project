@@ -13,6 +13,26 @@ interface Expense{
     category: string;
 }
 
+type ApiResponse<T> = 
+|{
+    success: true;
+    data: T;
+} | { 
+    success: false;
+    data: string;
+}
+
+// helper function for handle api response
+
+function apiResponse<T>(fn: ()=>T): ApiResponse<T> | undefined {
+    try{
+       return { success: true, data: fn()};
+
+    }catch(error){
+       return {success: false, data: String(error)};
+    }
+}  
+
 class Repository< T extends {id:string}>{
 
     private items: T[] = [];
@@ -69,16 +89,19 @@ expenseRepo.add({
   category: "Transport"
 });
 
-console.log(expenseRepo.find("01"));
+console.log(apiResponse(()=> expenseRepo.find("01")));
 
-console.log(expenseRepo.getALL());
+console.log(apiResponse(()=> expenseRepo.getALL()));
 
 console.log("--------update item--------");
 expenseRepo.update("02", {description: "Train ticket"});
-console.log(expenseRepo.getALL());
+console.log(apiResponse(()=> expenseRepo.getALL()));
 
 
 
+
+console.log("--------------Error-------------------");
+console.log(apiResponse(()=> expenseRepo.find("03")));
 
 
 

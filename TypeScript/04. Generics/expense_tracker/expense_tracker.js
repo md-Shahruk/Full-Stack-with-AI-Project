@@ -1,5 +1,14 @@
 "use strict";
 // MINI PROJECT- Expense Tracker
+// helper function for handle api response
+function apiResponse(fn) {
+    try {
+        return { success: true, data: fn() };
+    }
+    catch (error) {
+        return { success: false, data: String(error) };
+    }
+}
 class Repository {
     items = [];
     // add function
@@ -44,8 +53,10 @@ expenseRepo.add({
     amount: 500,
     category: "Transport"
 });
-console.log(expenseRepo.find("01"));
-console.log(expenseRepo.getALL());
+console.log(apiResponse(() => expenseRepo.find("01")));
+console.log(apiResponse(() => expenseRepo.getALL()));
 console.log("--------update item--------");
 expenseRepo.update("02", { description: "Train ticket" });
-console.log(expenseRepo.getALL());
+console.log(apiResponse(() => expenseRepo.getALL()));
+console.log("--------------Error-------------------");
+console.log(apiResponse(() => expenseRepo.find("03")));
